@@ -17,7 +17,7 @@
       }
    ?>
    <footer>
-     Copyright &copy; 2018 Copyright Holder All Rights Reserved To Houley.
+     Copyright &copy; 2018 Copyright Holder All Rights Reserved.
      <div class="debug">
        <?php print_r($_SESSION); ?>
      </div>
