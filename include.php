@@ -15,7 +15,7 @@
             </div>
             <div>
               <label>Password:</label>
-              <input type="text" name="password" value="">
+              <input type="text" name="user_pass" value="">
             </div>
             <button type="submit" name="button">Login</button>
           </fieldset>
@@ -47,6 +47,20 @@
       </div>
 <?php }
   function start() {
-    $_SESSION['status'] = 'startchat';
+    ?>
+    <div class="container" id="chat">
+      <div id="liveChat"></div> <!-- Chat window -->
+
+      <form class="" action="ws.php" method="post">
+        <fieldset>
+          <div class="">
+            <label>Message:</label>
+            <input type="text" name="messageBox" id="messageBox" placeholder="Message">
+            <button type="button" name="Send">Send Message</button>
+        </fieldset>
+      </form>
+      <a href="supportFiles/reset.php">Logout</a>
+    </div>
+    <?php
   }
 ?>

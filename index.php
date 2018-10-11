@@ -12,8 +12,10 @@
     <?php
       if(!isset($_SESSION['userID'])) {
         login();
-      } else {
+      } elseif($_SESSION['status'] = "successfulLogin") {
         start();
+      } else {
+        login();
       }
    ?>
    <footer>
