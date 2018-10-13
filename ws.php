@@ -1,5 +1,4 @@
-
-\<?php
+<?php
 session_start();
 include 'dbconnect.php';
 print_r($_SESSION);
@@ -30,6 +29,7 @@ print_r($_SESSION);
           $_SESSION['username'] = $result['username'];
           $_SESSION['f.name'] = $result['fname'];
           $_SESSION['status'] = "successfulLogin";
+          unset($_SESSION['message']);
           header('Location: index.php');
         } else {
           // if an username was found but your password was wrong.
@@ -46,4 +46,28 @@ print_r($_SESSION);
       // code...
       break;
   }
+
+  // Get message from database
+  if ($_GET["messageGet"] == 'true' && isset($_SESSION["f.name"])) {
+    $select_sql = "SELECT * FROM `message`";
+    $conn = dbConnect();
+    $stmt = $conn->prepare($select_sql);
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $result;
+    exit();
+  }
+
+  // Post message to database
+  if ($_GET["messagePost"] == 'post' && isset($_SESSION["f.name"])) {
+    $_SESSION["message"] = $_GET["message"];
+    $insert_sql = "INSERT INTO message (messageID, userID, message, timestamp) VALUES (NULL, 2, '" . $_SESSION['message'] . "', CURRENT_TIMESTAMP);";
+    print($insert_sql);
+    $conn = dbConnect();
+    $stmt = $conn->prepare($insert_sql);
+    $stmt->execute();
+    exit();
+  }
+
+
 ?>
