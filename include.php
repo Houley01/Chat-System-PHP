@@ -45,18 +45,19 @@
           </fieldset>
         </form>
       </div>
+      <button type="button" name="button" onclick="changeBetweenSignUpAndSignIn()">Switch bettween Sign In and Sign Up</button>
 <?php }
   function start() {
     ?>
     <div class="container" id="chat">
       <div id="liveChat"></div> <!-- Chat window -->
 
-      <form class="" action="ws.php" method="post">
+      <form id="messageBox" method="post">
         <fieldset>
           <div class="">
             <label>Message:</label>
-            <input type="text" name="messageBox" id="messageBox" placeholder="Message">
-            <button type="button" name="Send">Send Message</button>
+            <input type="text" name="messageTextBox" id="messageTextBox" placeholder="Message">
+            <button type="button" name="Send" onclick="sendMessage()">Send Message</button>
         </fieldset>
       </form>
       <a href="supportFiles/reset.php">Logout</a>

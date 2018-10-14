@@ -1,0 +1,7 @@
+ /* Developer Ethan Houley */
+ /* Master.css */
+ /* This file is used to store all custom styling */
+ /* Hide sign Up form from user */
+ #signUp {
+   display: none;
+ }

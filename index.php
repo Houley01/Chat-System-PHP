@@ -19,7 +19,7 @@
       }
    ?>
    <footer>
-     Copyright &copy; 2018 Copyright Holder All Rights Reserved.
+     Copyright &copy; 2018 Copyright Holder All Rights Reserved To Ethan Houley.
      <div class="debug">
        <?php print_r($_SESSION); ?>
      </div>
